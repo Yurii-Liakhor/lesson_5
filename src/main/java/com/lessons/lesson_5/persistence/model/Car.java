@@ -31,4 +31,22 @@ public class Car {
         this.price = price;
         this.maxSpeed = maxSpeed;
     }
+
+    public static String makeRace(Car car1, Car car2) {
+        return String.format("%s and %s now in race!", car1.getManufacturer(), car2.getManufacturer());
+    }
+
+    //TODO not implemented
+    public static String getManufacturerAndModel() {
+        throw new UnsupportedOperationException("No implementation!!!");
+    }
+
+    public static void waitInQueue() {
+        try {
+            Thread.sleep(30L);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
 }

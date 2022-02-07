@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <context:component-scan base-package="com.lessons.lesson_5.*"/>
+
+    <tx:annotation-driven transaction-manager="txManager"/>
+
+    <jpa:repositories base-package="com.lessons.lesson_5.persistence.dao.repositories"
+                      entity-manager-factory-ref="entityManagerFactory" transaction-manager-ref="txManager"/>
+
+
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+        <property name="persistenceUnitName" value="item"/>
+    </bean>
+
+    <bean id="txManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+
+    <bean id="car1" class="com.lessons.lesson_5.persistence.model.Car">
+        <property name="manufacturer" value="Tesla"/>
+        <property name="model" value="S"/>
+        <property name="engineCapacity" value="300"/>
+        <property name="maxSpeed" value="888"/>
+        <property name="price" value="999"/>
+    </bean>
+
+    <bean id="car2" class="com.lessons.lesson_5.persistence.model.Car">
+        <property name="manufacturer" value="Tesla"/>
+        <property name="model" value="X"/>
+        <property name="engineCapacity" value="350"/>
+        <property name="maxSpeed" value="999"/>
+        <property name="price" value="999"/>
+    </bean>
+
+    <bean id="car3" class="com.lessons.lesson_5.persistence.model.Car">
+        <property name="manufacturer" value="Tesla"/>
+        <property name="model" value="Y"/>
+        <property name="engineCapacity" value="400"/>
+        <property name="maxSpeed" value="999"/>
+        <property name="price" value="999"/>
+    </bean>
+
+    <bean id="car4" class="com.lessons.lesson_5.persistence.model.Car">
+        <property name="manufacturer" value="Audi"/>
+        <property name="model" value="A3"/>
+        <property name="engineCapacity" value="200"/>
+        <property name="maxSpeed" value="600"/>
+        <property name="price" value="999"/>
+    </bean>
+
+    <bean id="car5" class="com.lessons.lesson_5.persistence.model.Car">
+        <property name="manufacturer" value="Audi"/>
+        <property name="model" value="A8"/>
+        <property name="engineCapacity" value="300"/>
+        <property name="maxSpeed" value="700"/>
+        <property name="price" value="999"/>
+    </bean>
+
+</beans>

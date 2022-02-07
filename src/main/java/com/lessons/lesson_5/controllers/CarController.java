@@ -34,6 +34,12 @@ public class CarController {
         return  "redirect:/car/all";
     }
 
+//    @GetMapping(value = "/car")
+//    public ModelAndView car(ModelAndView modelAndView) {
+//        modelAndView.setViewName("car/cars");
+//        return modelAndView;
+//    }
+
     @GetMapping(value = "/all")
     public ModelAndView listAllCars(ModelAndView modelAndView) throws InterruptedException {
         modelAndView.addObject("cars", carService.findAll());
