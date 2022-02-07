@@ -38,6 +38,11 @@ public class CarServiceImpl implements CarService {
         return carRepository.findCarByManufacturerAndModelAndMaxSpeed(manufacture, model, maxSpeed);
     }
 
+    @Override
+    public List<Car> removeCarByManufacturer(String manufacture) {
+        return carRepository.removeCarByManufacturer(manufacture);
+    }
+
     @Autowired
     public void setCarRepository(CarRepository carRepository) {
         this.carRepository = carRepository;

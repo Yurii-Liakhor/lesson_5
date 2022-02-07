@@ -12,4 +12,5 @@ import java.util.List;
 public interface CarRepository extends CrudRepository<Car, Long> {
     List<Car> findCarByManufacturer(String name);
     List<Car> findCarByManufacturerAndModelAndMaxSpeed(String manufacture, String model, String maxSpeed);
+    List<Car> removeCarByManufacturer(String manufacture);
 }

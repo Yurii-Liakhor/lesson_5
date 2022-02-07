@@ -3,13 +3,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Employee search result</title>
+    <title>Car search result</title>
 </head>
 <body>
-<h1>List of employee : </h1>
+<h1>List of car : </h1>
 
-<c:forEach items="${employees}" var="employee" varStatus="status">
-    <p><h2>Result #${status.index + 1}</h2> ${employee}</p>
+<c:forEach items="${cars}" var="car" varStatus="status">
+    <p><h2>Result #${status.index + 1}</h2> ${cars}</p>
 </c:forEach>
 
 <button type="button"

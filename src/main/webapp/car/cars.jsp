@@ -14,16 +14,24 @@ ${cars}
 <form method="POST" action="/lesson_4_war_exploded/car/add">
     <table>
         <tr>
-            <td><label for="name">Name</label></td>
-            <td><input type="text" name="name" id="name"/></td>
+            <td><label for="manufacturer">Manufacturer:</label></td>
+            <td><input type="text" name="manufacturer" id="manufacturer"/></td>
         </tr>
         <tr>
-            <td><label for="position">Position</label></td>
-            <td><input type="text" name="position" id="position"/></td>
+            <td><label for="model">Model:</label></td>
+            <td><input type="text" name="model" id="model"/></td>
         </tr>
         <tr>
-            <td><label for="phone">Phone</label></td>
-            <td><input type="text" name="phone" id="phone"/></td>
+            <td><label for="engineCapacity">Engine capacity:</label></td>
+            <td><input type="text" name="engineCapacity" id="engineCapacity"/></td>
+        </tr>
+        <tr>
+            <td><label for="maxSpeed">Max speed:</label></td>
+            <td><input type="text" name="maxSpeed" id="maxSpeed"/></td>
+        </tr>
+        <tr>
+            <td><label for="price">Price:</label></td>
+            <td><input type="text" name="price" id="price"/></td>
         </tr>
         <tr>
             <td>
@@ -33,39 +41,64 @@ ${cars}
     </table>
 </form>
 
-<%--<br/><br/>--%>
-<%--<form method="POST" action="/lesson_4_war_exploded/car/findByName">--%>
-<%--    <table>--%>
-<%--        <tr>--%>
-<%--            <td><label for="name">Name</label></td>--%>
-<%--            <td><input type="text" name="name"/></td>--%>
-<%--        </tr>--%>
-<%--        <tr>--%>
-<%--            <td>--%>
-<%--                <input type="submit" value="Search by name">--%>
-<%--            </td>--%>
-<%--        </tr>--%>
-<%--    </table>--%>
-<%--</form>--%>
+<br/><br/>
+<form method="POST" action="/lesson_4_war_exploded/car/findByManufacturer">
+    <table>
+        <tr>
+            <td><label for="manufacturer">Manufacturer</label></td>
+            <td><input type="text" name="manufacturer"/></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Search by manufacturer">
+            </td>
+        </tr>
+    </table>
+</form>
 
-<%--<br/><br/>--%>
-<%--<form method="POST" action="/lesson_4_war_exploded/car/findByNameAndPosition">--%>
-<%--    <table>--%>
-<%--        <tr>--%>
-<%--            <td><label for="name">Name</label></td>--%>
-<%--            <td><input type="text" name="name"/></td>--%>
-<%--        </tr>--%>
-<%--        <tr>--%>
-<%--            <td><label for="position">Position</label></td>--%>
-<%--            <td><input type="text" name="position"/></td>--%>
-<%--        </tr>--%>
-<%--        <tr>--%>
-<%--            <td>--%>
-<%--                <input type="submit" value="Search by name and position">--%>
-<%--            </td>--%>
-<%--        </tr>--%>
-<%--    </table>--%>
-<%--</form>--%>
+<br/><br/>
+<form method="POST" action="/lesson_4_war_exploded/car/findByManufacturerAndModelAndMaxSpeed">
+    <table>
+        <tr>
+            <td><label for="manufacturer">Manufacturer</label></td>
+            <td><input type="text" name="manufacturer"/></td>
+        </tr>
+        <tr>
+            <td><label for="model">Model</label></td>
+            <td><input type="text" name="model"/></td>
+        </tr>
+        <tr>
+            <td><label for="maxSpeed">MaxSpeed</label></td>
+            <td><input type="text" name="maxSpeed"/></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Search by manufacturer, model and max speed">
+            </td>
+        </tr>
+    </table>
+</form>
+
+<br/><br/>
+<form method="POST" action="/lesson_4_war_exploded/car/removeById">
+    <table>
+        <tr>
+            <td><label for="id">Id</label></td>
+            <td><input type="text" name="id"/></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="remove car by id">
+            </td>
+        </tr>
+    </table>
+</form>
+
+<br/><br/>
+<form method="GET" action="/lesson_4_war_exploded/car/removeByManufacturer">
+    <input type="hidden" name="manufacturer" value="Audi" />
+    <input type="submit" value="remove cars by Tesla manufacturer">
+</form>
 
 </body>
 </html>

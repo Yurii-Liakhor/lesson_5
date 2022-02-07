@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -35,8 +36,40 @@ public class CarController {
 
     @GetMapping(value = "/all")
     public ModelAndView listAllCars(ModelAndView modelAndView) throws InterruptedException {
-        modelAndView.addObject("employees", carService.findAll());
+        modelAndView.addObject("cars", carService.findAll());
         modelAndView.setViewName("car/cars");
         return modelAndView;
+    }
+
+    @PostMapping(value = "/findByManufacturer")
+    public ModelAndView findCarByManufacturer(@RequestParam String manufacturer, ModelAndView modelAndView) {
+        modelAndView.addObject("cars", carService.findCarByManufacture(manufacturer));
+        modelAndView.setViewName("car/search-results");
+        return modelAndView;
+    }
+
+    @PostMapping(value = "/findByManufacturerAndModelAndMaxSpeed")
+    public ModelAndView findCarByManufacturerAndModelAndMaxSpeed(@RequestParam String manufacturer,
+                                                                 @RequestParam String model,
+                                                                 @RequestParam String maxSpeed,
+                                                                 ModelAndView modelAndView) {
+        modelAndView.addObject("cars", carService.findCarByManufacturerAndModelAndMaxSpeed(manufacturer, model, maxSpeed));
+        modelAndView.setViewName("car/search-results");
+        return modelAndView;
+    }
+
+    @PostMapping("/removeById")
+    public String removeCarById(HttpServletRequest request) {
+        String id = request.getParameter("id");
+        carService.removeById(Long.parseLong(id));
+        LOG.debug("car with id " + id + " was removed");
+        return  "redirect:/car/all";
+    }
+
+    @GetMapping("/removeByManufacturer")
+    public String removeCarByManufacturer(@RequestParam String manufacturer) {
+        carService.removeCarByManufacturer(manufacturer);
+        LOG.debug("cars with manufacturer " + manufacturer + " was removed");
+        return  "redirect:/car/all";
     }
 }

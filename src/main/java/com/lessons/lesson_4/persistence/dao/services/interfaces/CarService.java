@@ -12,7 +12,9 @@ public interface CarService {
 
     void removeById(long id);
 
-    List<Car> findCarByManufacture(String name);
+    List<Car> findCarByManufacture(String manufacturer);
 
     List<Car> findCarByManufacturerAndModelAndMaxSpeed(String manufacture, String model, String maxSpeed);
+
+    List<Car> removeCarByManufacturer(String manufacturer);
 }
