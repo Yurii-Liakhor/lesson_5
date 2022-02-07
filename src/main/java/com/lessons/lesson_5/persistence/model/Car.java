@@ -1,4 +1,4 @@
-package com.lessons.lesson_4.persistence.model;
+package com.lessons.lesson_5.persistence.model;
 
 import lombok.*;
 

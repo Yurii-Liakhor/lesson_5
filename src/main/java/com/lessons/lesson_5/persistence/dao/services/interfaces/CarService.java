@@ -1,6 +1,6 @@
-package com.lessons.lesson_4.persistence.dao.services.interfaces;
+package com.lessons.lesson_5.persistence.dao.services.interfaces;
 
-import com.lessons.lesson_4.persistence.model.Car;
+import com.lessons.lesson_5.persistence.model.Car;
 
 import java.util.List;
 

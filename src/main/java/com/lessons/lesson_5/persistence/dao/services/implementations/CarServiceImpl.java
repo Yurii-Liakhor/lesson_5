@@ -1,9 +1,9 @@
-package com.lessons.lesson_4.persistence.dao.services.implementations;
+package com.lessons.lesson_5.persistence.dao.services.implementations;
 
 import com.google.common.collect.Lists;
-import com.lessons.lesson_4.persistence.dao.repositories.CarRepository;
-import com.lessons.lesson_4.persistence.dao.services.interfaces.CarService;
-import com.lessons.lesson_4.persistence.model.Car;
+import com.lessons.lesson_5.persistence.dao.repositories.CarRepository;
+import com.lessons.lesson_5.persistence.dao.services.interfaces.CarService;
+import com.lessons.lesson_5.persistence.model.Car;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

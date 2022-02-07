@@ -1,6 +1,6 @@
-package com.lessons.lesson_4.persistence.dao.repositories;
+package com.lessons.lesson_5.persistence.dao.repositories;
 
-import com.lessons.lesson_4.persistence.model.Car;
+import com.lessons.lesson_5.persistence.model.Car;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

@@ -9,11 +9,11 @@
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:component-scan base-package="com.lessons.lesson_4.*"/>
+    <context:component-scan base-package="com.lessons.lesson_5.*"/>
 
     <tx:annotation-driven transaction-manager="txManager"/>
 
-    <jpa:repositories base-package="com.lessons.lesson_4.persistence.dao.repositories"
+    <jpa:repositories base-package="com.lessons.lesson_5.persistence.dao.repositories"
                       entity-manager-factory-ref="entityManagerFactory" transaction-manager-ref="txManager"/>
 
 

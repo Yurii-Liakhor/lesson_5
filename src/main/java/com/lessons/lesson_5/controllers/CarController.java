@@ -1,7 +1,7 @@
-package com.lessons.lesson_4.controllers;
+package com.lessons.lesson_5.controllers;
 
-import com.lessons.lesson_4.persistence.dao.services.interfaces.CarService;
-import com.lessons.lesson_4.persistence.model.Car;
+import com.lessons.lesson_5.persistence.dao.services.interfaces.CarService;
+import com.lessons.lesson_5.persistence.model.Car;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
